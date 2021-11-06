@@ -16,12 +16,23 @@ var Num = ["1","2","3","4","5","6","7","8","9","0"]
 var NumSc = ["1","2","3","4","5","6","7","8","9","0","\"","!","#","$","%","&","\'","(",")","*","+","\,","-",".","/",":",";","<","=",">","?","@","[","\\","]","^","_","`","{","|","}","~"]
 var Sc = ["\"","!","#","$","%","&","\'","(",")","*","+","\,","-",".","/",":",";","<","=",">","?","@","[","\\","]","^","_","`","{","|","}","~"]
 
-//variales and confirm windows for password requirements//
-var confirmUc = window.confirm("Would you like to include uppercase letters?");
-var confirmLc = window.confirm("Would you like to include lowercase letters?");
-var confirmNum = window.confirm("Would you like to include numbers?");
-var confirmSc = window.confirm("Would you like to include special charanters?");
-var promptPwLength = window.prompt("Please enter required length of password.");
+function generatePassword() {
+  // variales and confirm windows for password requirements//
+  var confirmUc = window.confirm("Would you like to include uppercase letters?");
+  var confirmLc = window.confirm("Would you like to include lowercase letters?");
+  var confirmNum = window.confirm("Would you like to include numbers?");
+  var confirmSc = window.confirm("Would you like to include special charanters?");
+  var promptPwLength = window.prompt("Please enter required length of password (at least 8 and no more than 128 characters).");
+  var PwLength = promptPwLength
+  var NewPw;
+  //conditional statements based on user response//
+  for(var i = 0; i < PwLength; i++) {
+    if (confirmUc === true) {
+      return character = Math.floor(Math.random() * Uc.length)
+      NewPw = NewPW + character
+    };
+  };
+};
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
