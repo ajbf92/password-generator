@@ -16,15 +16,40 @@ var Num = ["1","2","3","4","5","6","7","8","9","0"]
 var NumSc = ["1","2","3","4","5","6","7","8","9","0","\"","!","#","$","%","&","\'","(",")","*","+","\,","-",".","/",":",";","<","=",">","?","@","[","\\","]","^","_","`","{","|","}","~"]
 var Sc = ["\"","!","#","$","%","&","\'","(",")","*","+","\,","-",".","/",":",";","<","=",">","?","@","[","\\","]","^","_","`","{","|","}","~"]
 
+//randomize array//
+function shuffleArr (array) {
+  for (var i = array.length - 1; i > 0; i--) {
+    var rand = Math.floor(Math.random() * (i + 1));
+    [array[i], array[rand]] = [array[rand], array[i]]
+  }
+}
+shuffleArr(Uc);
+shuffleArr(UcLc);
+shuffleArr(UcNum);
+shuffleArr(UcSc);
+shuffleArr(UcLcNum);
+shuffleArr(UcLcSc);
+shuffleArr(UcNumSc);
+shuffleArr(UcLcNumSc);
+shuffleArr(Lc);
+shuffleArr(LcNum);
+shuffleArr(LcSc);
+shuffleArr(LcNumSc);
+shuffleArr(Num);
+shuffleArr(NumSc);
+shuffleArr(Sc);
+
 function generatePassword() {
-  // variales and confirm windows for password requirements//
+  
+  // variables and confirm windows for password requirements//
   var confirmUc = window.confirm("Would you like to include uppercase letters?");
   var confirmLc = window.confirm("Would you like to include lowercase letters?");
   var confirmNum = window.confirm("Would you like to include numbers?");
   var confirmSc = window.confirm("Would you like to include special charanters?");
   var PwLength = window.prompt("Please enter required length of password (at least 8 and no more than 128 characters).");
   var password = "";
-  //conditional statements based on user response//
+  
+  //conditional statement based on user response//
   for(var i = 0; i < PwLength; i++) {
     if (confirmUc === true && confirmLc === true && confirmNum === true && confirmSc === true) {
       var character = Math.floor(Math.random() * UcLcNumSc.length);
@@ -82,9 +107,7 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
