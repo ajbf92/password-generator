@@ -23,15 +23,16 @@ function generatePassword() {
   var confirmNum = window.confirm("Would you like to include numbers?");
   var confirmSc = window.confirm("Would you like to include special charanters?");
   var promptPwLength = window.prompt("Please enter required length of password (at least 8 and no more than 128 characters).");
-  var PwLength = promptPwLength
-  var NewPw;
+  var PwLength = promptPwLength;
+  var password = "";
   //conditional statements based on user response//
   for(var i = 0; i < PwLength; i++) {
-    if (confirmUc === true) {
-      return character = Math.floor(Math.random() * Uc.length)
-      NewPw = NewPW + character
-    };
-  };
+    if (confirmUc === true && confirmLc === true && confirmNum === true && confirmSc === true) {
+      var character = Math.floor(Math.random() * UcLcNumSc.length);
+      password += UcLcNumSc[character];
+  }
+  return password;
+};
 };
 
 // Get references to the #generate element
