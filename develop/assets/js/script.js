@@ -41,12 +41,20 @@ shuffleArr(Sc);
 
 function generatePassword() {
   
+  function promptPwLength() {
+    PwLength = window.prompt("Please enter required length of password (at least 8 and no more than 128 characters).");
+    if (PwLength < 8 | PwLength > 128) {
+    promptPwLength();
+    } else {
+      return
+    }
+  }
   // variables and confirm windows for password requirements//
   var confirmUc = window.confirm("Would you like to include uppercase letters?");
   var confirmLc = window.confirm("Would you like to include lowercase letters?");
   var confirmNum = window.confirm("Would you like to include numbers?");
   var confirmSc = window.confirm("Would you like to include special charanters?");
-  var PwLength = window.prompt("Please enter required length of password (at least 8 and no more than 128 characters).");
+  promptPwLength();
   var password = "";
   
   //conditional statement based on user response//
