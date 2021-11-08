@@ -22,17 +22,57 @@ function generatePassword() {
   var confirmLc = window.confirm("Would you like to include lowercase letters?");
   var confirmNum = window.confirm("Would you like to include numbers?");
   var confirmSc = window.confirm("Would you like to include special charanters?");
-  var promptPwLength = window.prompt("Please enter required length of password (at least 8 and no more than 128 characters).");
-  var PwLength = promptPwLength;
+  var PwLength = window.prompt("Please enter required length of password (at least 8 and no more than 128 characters).");
   var password = "";
   //conditional statements based on user response//
   for(var i = 0; i < PwLength; i++) {
     if (confirmUc === true && confirmLc === true && confirmNum === true && confirmSc === true) {
       var character = Math.floor(Math.random() * UcLcNumSc.length);
       password += UcLcNumSc[character];
+      console.log(password);
+      console.log(UcLcNumSc);
+  } else if (confirmUc === true && confirmLc === true && confirmNum === true) {
+      var character = Math.floor(Math.random() * UcLcNum.length);
+      password += UcLcNum[character];
+  } else if (confirmUc === true && confirmLc === true && confirmSc === true) {
+      var character = Math.floor(Math.random() * UcLcSc.length);
+      password += UcLcSc[character];
+  } else if (confirmUc === true && confirmNum === true && confirmSc === true) {
+      var character = Math.floor(Math.random() * UcNumSc.length);
+      password += UcNumSc[character];
+  } else if (confirmLc === true && confirmNum === true && confirmSc === true) {
+      var character = Math.floor(Math.random() * LcNumSc.length);
+      password += LcNumSc[character];
+  } else if (confirmUc === true && confirmLc === true) {
+      var character = Math.floor(Math.random() * UcLc.length);
+      password += UcLc[character];
+  } else if (confirmUc === true && confirmNum === true) {
+      var character = Math.floor(Math.random() * UcNum.length);
+      password += UcNum[character];
+  } else if (confirmUc === true && confirmSc === true) {
+      var character = Math.floor(Math.random() * UcSc.length);
+      password += UcSc[character];
+  } else if (confirmLc === true && confirmSc === true) {
+      var character = Math.floor(Math.random() * LcSc.length);
+      password += LcSc[character];
+  } else if (confirmNum === true && confirmSc === true) {
+      var character = Math.floor(Math.random() * NumSc.length);
+      password += NumSc[character];
+  } else if (confirmUc === true) {
+      var character = Math.floor(Math.random() * Uc.length);
+      password += Uc[character];
+  } else if (confirmLc === true) {
+      var character = Math.floor(Math.random() * Lc.length);
+      password += Lc[character];
+  } else if (confirmNum === true) {
+      var character = Math.floor(Math.random() * Num.length);
+      password += Num[character];
+  } else if (confirmSc === true) {
+      var character = Math.floor(Math.random() * Sc.length);
+      password += Sc[character];
   }
-  return password;
 };
+  return password;
 };
 
 // Get references to the #generate element
