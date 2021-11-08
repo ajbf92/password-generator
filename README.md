@@ -10,7 +10,7 @@ To create an application that can be use to generate a random password based on 
 
 ## Website
 https://ajbf92.github.io/password-generator/
-![ScreenShot](assets/passwordGenerator.png)
+![ScreenShot](develop/assets/passwordGenerator.png)
 
 ## Contribution
 By Alex Betancourt
